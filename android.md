@@ -32,6 +32,11 @@ dependencies {
         
     }
 ```
+A korábbi megadás időközben elavult.
+Későbbi Projektnél már nem az előző megoldást kell használni, hanem a következőt kell a fájlba beírni:
+```Kotlin
+        id 'androidx.navigation.safeargs' version '2.5.3' apply false
+```
 Ezt követően meg kell nyitni a **build.gradle(Module..)** fájlt és abba a következőket megadni a **plugins** részen belül:
 A **...** azokat a részeket jelenti amelyek eleve benne vannak, tehát nem kell három pontot beírni!!!!!
 
