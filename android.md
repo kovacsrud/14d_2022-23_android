@@ -133,6 +133,7 @@ Első lépésben készíteni kell egy menüt.
 A name legyen:**opmenu**
 
 Adjunk hozzá egy menuitem-et! A **Title** legyen **B elem**, az **id** pedig **BFragment**
+Fontos, hogy a fragment, amire navigálni kívánunk, legyen hozzáadva a navigációhoz!!!
 
 A menü xml kódja most így néz ki:
 ```xml
