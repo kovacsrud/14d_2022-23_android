@@ -42,9 +42,10 @@ A **...** azokat a részeket jelenti amelyek eleve benne vannak, tehát nem kell
 
 ```Kotlin
 plugins {
-    ...
-    id 'kotlin-kapt'
-    id 'androidx.navigation.safeargs' 
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'androidx.navigation.safeargs.kotlin'
+    id 'kotlin-kapt' 
 }
 ```
 
