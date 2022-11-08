@@ -44,7 +44,7 @@ A **...** azokat a részeket jelenti amelyek eleve benne vannak, tehát nem kell
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
-    id 'androidx.navigation.safeargs.kotlin'
+    id 'androidx.navigation.safeargs'
     id 'kotlin-kapt' 
 }
 ```
