@@ -3,11 +3,11 @@ package com.raz.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class PracticeViewModel:ViewModel() {
+class PracticeViewModel(beErtek:Int):ViewModel() {
     var adatErtek=MutableLiveData<Int>()
 
     init {
-        adatErtek.value=1;
+        adatErtek.value=beErtek;
     }
     fun Novel(){
         adatErtek.value=adatErtek.value?.plus(1)
