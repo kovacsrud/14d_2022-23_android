@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+        <data>
+                <variable
+                    name="testadat"
+                    type="com.raz.bmi.TestAdatok" />
+
+        </data>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".MainActivity">
+
+                <TextView
+                    android:id="@+id/cim"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cim"
+                    android:textSize="@dimen/cim"
+                    android:textColor="@color/material_dynamic_primary60"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/cim_magassag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/cimkemeret"
+                    android:text="Magasság (cm):"
+                    android:textColor="@color/material_dynamic_primary50"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cim"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="20dp" />
+
+                <EditText
+                    android:id="@+id/magassag_ertek"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toEndOf="@id/cim_magassag"
+                    app:layout_constraintTop_toTopOf="@id/cim_magassag"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <TextView
+                    android:id="@+id/cim_testsuly"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Testsúly (kg):"
+                    android:textSize="@dimen/cimkemeret"
+                    android:textColor="@color/material_dynamic_primary50"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cim_magassag"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginLeft="20dp" />
+
+                <EditText
+                    android:id="@+id/testsulyErtek"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toEndOf="@id/cim_testsuly"
+                    app:layout_constraintTop_toTopOf="@id/cim_testsuly"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <TextView
+                    android:id="@+id/cim_bmi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="BMI index:"
+                    android:textSize="@dimen/cimkemeret"
+                    android:textColor="@color/material_dynamic_primary50"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cim_testsuly"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginLeft="20dp" />
+
+                <TextView
+                    android:id="@+id/bmiErtek"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="@dimen/cimkemeret"
+                    android:textColor="@color/material_dynamic_primary50"
+                    app:layout_constraintStart_toEndOf="@id/cim_bmi"
+                    app:layout_constraintTop_toTopOf="@id/cim_bmi"
+                    app:layout_constraintEnd_toEndOf="parent"
+
+                    />
+
+                <TextView
+                    android:id="@+id/cim_normalsuly"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Az ön becsült normál testsúlya"
+                    android:textColor="@color/material_dynamic_primary50"
+                    android:textSize="@dimen/cimkemeret"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cim_bmi"
+                    android:layout_marginTop="50dp" />
+
+                <TextView
+                    android:id="@+id/normalsulyErtek"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="@dimen/cim"
+                    android:textColor="@color/material_dynamic_primary60"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cim_normalsuly"
+                    android:layout_marginTop="50dp" />
+
+                <Button
+                    android:id="@+id/buttonSzamolas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Számolás"
+                    android:textSize="@dimen/cim"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/normalsulyErtek"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
