@@ -438,11 +438,7 @@ Az app navigációt is fog alkalmazni, ezért az ehhez szükséges függőségek
         
 Gradle Scripts-en belül meg kell nyitni a **build.gradle(Project...)** fájlt, és abba a következőket beírni a dependencies részhez:
 ```Kotlin
-dependencies {
-        ...
-        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:2.3.5"
-        
-    }
+        id 'androidx.navigation.safeargs' version '2.5.3' apply false
 ```
 Ezt követően meg kell nyitni a **build.gradle(Module..)** fájlt és abba a következőket megadni a **plugins** részen belül:
 A **...** azokat a részeket jelenti amelyek eleve benne vannak, tehát nem kell három pontot beírni!!!!!
@@ -463,6 +459,8 @@ dependencies {
         implementation "androidx.navigation:navigation-fragment-ktx:2.3.5"
         implementation "androidx.navigation:navigation-ui-ktx:2.3.5" 
         implementation "androidx.recyclerview:recyclerview:1.2.1"
+        implementation "androidx.lifecycle:lifecycle-viewmodel:2.5.1"
+        implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1"
 }
 ```       
 Adatkötés használata:
@@ -618,7 +616,7 @@ val navController=this.findNavController()
 adapter= PersonAdapter(requireContext(),adatok){
         itemDto:Person,position:Int->
         Log.i("Click","${itemDto.keresztnev}")
-        navController.navigate(ListFragmentDirections.actionListFragmentToDetailFragment())
+        navController.navigate(ListFragmentDirections.actionListFragmentToDetailFragment(itemDto))
    }
 ```
 A következő lépés, hogy betöltsük az osztályok szerializációját végző plugint. A build.gradle(Modules..) fájlt nyissuk meg, a pluginekhez adjuk hozzá a következőt:
