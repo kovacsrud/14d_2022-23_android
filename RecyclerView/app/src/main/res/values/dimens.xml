@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="detail_szovegmeret">35sp</dimen>
+    <dimen name="detail_felso_margo">20dp</dimen>
+    <dimen name="list_item_szovegmeret">20sp</dimen>
+</resources>

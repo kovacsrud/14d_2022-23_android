@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="person"
+            type="com.raz.recyclerview.Person" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".DetailFragment">
+
+        <TextView
+            android:id="@+id/detail_vezeteknev"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/detail_szovegmeret"
+            android:text="@{person.vezeteknev}"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/detail_keresztnev"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{person.keresztnev}"
+            android:textSize="@dimen/detail_szovegmeret"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/detail_vezeteknev"
+            android:layout_marginTop="@dimen/detail_felso_margo"
+            />
+
+        <TextView
+            android:id="@+id/detail_szuletesiev"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(person.szuletesiev)}"
+            android:textSize="@dimen/detail_szovegmeret"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/detail_keresztnev"
+            android:layout_marginTop="@dimen/detail_felso_margo"
+        />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
