@@ -438,11 +438,7 @@ Az app navigációt is fog alkalmazni, ezért az ehhez szükséges függőségek
         
 Gradle Scripts-en belül meg kell nyitni a **build.gradle(Project...)** fájlt, és abba a következőket beírni a dependencies részhez:
 ```Kotlin
-dependencies {
-        ...
-        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:2.3.5"
-        
-    }
+        id 'androidx.navigation.safeargs' version '2.5.3' apply false
 ```
 Ezt követően meg kell nyitni a **build.gradle(Module..)** fájlt és abba a következőket megadni a **plugins** részen belül:
 A **...** azokat a részeket jelenti amelyek eleve benne vannak, tehát nem kell három pontot beírni!!!!!
@@ -463,6 +459,8 @@ dependencies {
         implementation "androidx.navigation:navigation-fragment-ktx:2.3.5"
         implementation "androidx.navigation:navigation-ui-ktx:2.3.5" 
         implementation "androidx.recyclerview:recyclerview:1.2.1"
+        implementation "androidx.lifecycle:lifecycle-viewmodel:2.5.1"
+        implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1"
 }
 ```       
 Adatkötés használata:
@@ -487,7 +485,18 @@ Az activity_main.xml be tegyük be a következőt:
   />
 ```
 ## Nézetek
-Az apphoz három layoutot kell készíteni. Minden fragmentnek meglesz a saját layoutja, valamit a listaelemnek is kell egy layoutot készíteni.
+Az apphoz két fragmentet kell készíteni. Minden fragmentnek meglesz a saját layoutja, valamit a listaelemnek is kell egy layoutot készíteni. A fragmentek legyenek **ListaFragment** valamint **DetailFragment** a listaelem layoutja pedig **list_item.xml**. A layoutokat minden esetben konvertáljuk **data binding layout-ra**. 
+A **ListaFragment** layoutja fogja tartalmazni a **recyclerview** komponenst.       
+        
+## Adat osztály (Person) létrehozása
+```kotlin
+data class Person(
+    var vezeteknev:String,
+    var keresztnev:String,
+    var szuletesiev:Int
+)
+```        
+        
         
 ## PersonAdapter készítése
 A RecyclerView használatához szükség van egy adapter osztály készítésére. Az adapter osztálynak meg kell valósítania egy ún. ViewHolder-t, illetve az ehhez tartozó metódusokat.
@@ -618,7 +627,7 @@ val navController=this.findNavController()
 adapter= PersonAdapter(requireContext(),adatok){
         itemDto:Person,position:Int->
         Log.i("Click","${itemDto.keresztnev}")
-        navController.navigate(ListFragmentDirections.actionListFragmentToDetailFragment())
+        navController.navigate(ListFragmentDirections.actionListFragmentToDetailFragment(itemDto))
    }
 ```
 A következő lépés, hogy betöltsük az osztályok szerializációját végző plugint. A build.gradle(Modules..) fájlt nyissuk meg, a pluginekhez adjuk hozzá a következőt:
