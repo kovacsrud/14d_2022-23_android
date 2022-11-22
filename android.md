@@ -485,7 +485,8 @@ Az activity_main.xml be tegyük be a következőt:
   />
 ```
 ## Nézetek
-Az apphoz három layoutot kell készíteni. Minden fragmentnek meglesz a saját layoutja, valamit a listaelemnek is kell egy layoutot készíteni.
+Az apphoz két fragmentet kell készíteni. Minden fragmentnek meglesz a saját layoutja, valamit a listaelemnek is kell egy layoutot készíteni. A fragmentek legyenek **ListaFragment** valamint **DetailFragment** a listaelem layoutja pedig **list_item.xml**. A layoutokat minden esetben konvertáljuk **data binding layout-ra**. 
+A **ListaFragment** layoutja fogja tartalmazni a **recyclerview** komponenst.       
         
 ## PersonAdapter készítése
 A RecyclerView használatához szükség van egy adapter osztály készítésére. Az adapter osztálynak meg kell valósítania egy ún. ViewHolder-t, illetve az ehhez tartozó metódusokat.
