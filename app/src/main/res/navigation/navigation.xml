@@ -18,5 +18,9 @@
         android:id="@+id/detailFragment"
         android:name="com.raz.rnduserapi.DetailFragment"
         android:label="fragment_detail"
-        tools:layout="@layout/fragment_detail" />
+        tools:layout="@layout/fragment_detail" >
+        <argument
+            android:name="aktdata"
+            app:argType="com.raz.rnduserapi.UserData" />
+    </fragment>
 </navigation>
