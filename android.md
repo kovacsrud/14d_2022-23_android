@@ -942,7 +942,13 @@ Először nyissuk meg a build.gradle(Project...) fájlt és a dependencies rész
 classpath "androidx.navigation:navigation-safe-args-gradle-plugin:2.3.5"
        
     }
+        
 ```
+Újabb Kotlin verziónál:
+```kotlin
+         id 'androidx.navigation.safeargs' version '2.5.3' apply false
+```        
+        
 Ezután nyissuk meg a build.gradle(Module....) fájlt! 
 A plugins részhez adjuk hozzá a következőket:
 ```kotlin
