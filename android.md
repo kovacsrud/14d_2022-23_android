@@ -942,7 +942,13 @@ Először nyissuk meg a build.gradle(Project...) fájlt és a dependencies rész
 classpath "androidx.navigation:navigation-safe-args-gradle-plugin:2.3.5"
        
     }
+        
 ```
+Újabb Kotlin verziónál:
+```kotlin
+         id 'androidx.navigation.safeargs' version '2.5.3' apply false
+```        
+        
 Ezután nyissuk meg a build.gradle(Module....) fájlt! 
 A plugins részhez adjuk hozzá a következőket:
 ```kotlin
@@ -975,6 +981,8 @@ dependencies {
     implementation "com.github.bumptech.glide:glide:4.12.0"
     implementation 'androidx.multidex:multidex:2.0.1'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation "androidx.lifecycle:lifecycle-viewmodel:2.5.1"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1"
 
     ***
 }
